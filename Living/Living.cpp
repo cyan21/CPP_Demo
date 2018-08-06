@@ -23,4 +23,3 @@ int main() {
    cout << liv.says() << endl;
 }
 */
-
