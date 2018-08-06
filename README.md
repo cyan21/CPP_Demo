@@ -20,11 +20,10 @@ $ mkdir lib
 ```
 $ make myapp
 ```
-
 the Makefile will generate : 
-  - libgreet.so (from Greeting folder)
-  - liblive.so (from Living folder)
-  - myapp (from MyApp folder)
+libgreet.so (from Greeting folder)
+liblive.so (from Living folder)
+myapp (from MyApp folder)
 
 - execute the app
 ```
