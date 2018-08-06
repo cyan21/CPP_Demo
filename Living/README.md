@@ -4,17 +4,18 @@
 
 - Uncomment the main method in Living.cpp
 
+- in the CMakeLists.txt, comment out "add_library" and uncomment add_executable
+
 - Generate exec 
+```
+$ cd Living
+$ mkdir build
+$ cd build
+$ cmake ..
+$ cmake --build .
+```
 
-```
-$ make 
-```
-or 
-
-```
-$ g++ ../Greeting/Greeting.cpp Living.cpp -o living 
-```
-- Execute file
+- Execution
 ```
 $ ./living
 ```

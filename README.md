@@ -26,3 +26,5 @@ in Myapp/build:
 ```
 $ ./myapp
 ```
+
+> You can also generate an executable for Greeting and Living projects, see the README in each folder
