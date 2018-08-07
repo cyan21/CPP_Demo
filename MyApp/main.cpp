@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../Living/Living.h"
+#include "Living.h"
 
 using namespace std;
 

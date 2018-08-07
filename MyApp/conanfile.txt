@@ -1,0 +1,5 @@
+[requires]
+living/0.1@yann/test
+
+[generators]
+cmake
