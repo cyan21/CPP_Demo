@@ -2,7 +2,7 @@
 #define LIVING_H__
 
 #include <string>
-#include "../Greeting/Greeting.h"
+#include "Greeting.h"
 
 using namespace std;
 
