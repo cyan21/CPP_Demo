@@ -28,6 +28,7 @@ pip install conan
 
 ## Important facts about Conan
 
+- the package resolution is done through "conan install", this will also generate : conanbuildinfo.cmake, conanbuildinfo.txt, conaninfo.txt, these files will be used for compilation and linking in your project (see CMakeLists.txt) => access to headers and libs embedded in conan packages 
 - conanfile.txt = easy way to resolve conan packages (will also generate files for CMake to point to header files, libs from imported conan package)
 - conanfile.py  = create and resolve conan packages
 
