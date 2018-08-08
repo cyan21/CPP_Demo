@@ -7,6 +7,19 @@
 - MyApp    : relies on Living project and generate exec 
 
 
+## Pre requisite
+
+- Download the following packages
+```
+sudo apt-get install build-essential cmake python-pip g++-multilib gcc-multilib git 
+```
+
+- Install Conan
+```
+pip install conan
+```
+
+
 ## How to build
 
 - Build Myapp Project  
