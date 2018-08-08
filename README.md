@@ -15,7 +15,7 @@
 
 ## Important facts about Conan
 
-- conanfile.txt = resolve conan packages + generate files for CMake (to point to header files, libs from imported conan package)
-- conanfile.py  = create conan package
+- conanfile.txt = easy way to resolve conan packages (will also generate files for CMake to point to header files, libs from imported conan package)
+- conanfile.py  = create and resolve conan packages
 
 > DO NOT FORGET to modify the CMakeLists.txt to include CONAN LIBS

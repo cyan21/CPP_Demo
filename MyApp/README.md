@@ -2,13 +2,17 @@
 
 ## How to generate app 
 
+- Build the application
+
 ```
-$ cd MyApp 
 $ mkdir build && cd build
+
+// this will fetch the living package and also the greeting package
 $ conan install ..
-$ cmake .. &&  $ cmake --build . 
+$ cmake .. &&  cmake --build . 
 ```
-- Execute application
+
+- Execute the application
 
 ```
 $ ./bin/myapp
