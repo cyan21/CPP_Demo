@@ -15,17 +15,22 @@ class GreetingConan(ConanFile):
     def source(self):
         self.run("git clone https://github.com/cyan21/CPP_Demo.git")
         self.run("cd CPP_Demo/Greeting && git checkout conan")
+        print "source repo : " + self.source_folder
+#        self.run("cp /root/conan_demo/CPP_Demo/Greeting/build/* %s" % self.source_folder)
+
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it
         # properly
-        tools.replace_in_file("CPP_Demo/Greeting/CMakeLists.txt", "project(Greeting)",
-                              '''project(Greeting)
-				include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-				conan_basic_setup()''')
+#        tools.replace_in_file("CPP_Demo/Greeting/CMakeLists.txt", "project(Greeting)",
+#                              '''project(Greeting)
+#				include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+#				conan_basic_setup()''')
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="CPP_Demo/Greeting")
+	# source folder not mandatory
+#        cmake.configure(source_folder=self.source_folder)
+        cmake.configure()
         cmake.build()
 
         # Explicit way:
@@ -34,7 +39,7 @@ class GreetingConan(ConanFile):
         # self.run("cmake --build . %s" % cmake.build_config)
 
     def package(self):
-        self.copy("*.h", dst="include", src="CPP_Demo/Greeting/")
+        self.copy("*.h", dst="include")
         self.copy("*greet.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)

@@ -17,7 +17,7 @@ class LivingConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="CPP_Demo/Living")
+        cmake.configure()
         cmake.build()
 
         # Explicit way:
@@ -26,7 +26,7 @@ class LivingConan(ConanFile):
         # self.run("cmake --build . %s" % cmake.build_config)
 
     def package(self):
-        self.copy("*.h", dst="include", src="CPP_Demo/Living/")
+        self.copy("*.h", dst="include")
         self.copy("*.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)
