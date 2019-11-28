@@ -17,7 +17,7 @@ class LivingConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure()
+        cmake.configure(source_folder=self.source_folder + "/CPP_Demo/Living/")
         cmake.build()
 
         # Explicit way:
