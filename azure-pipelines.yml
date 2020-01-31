@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-16.04'
+
+container: conanio/gcc8
+
+steps:
+- script: conan --version 
+  displayName: 'Conan version'
+
+#- task: UsePythonVersion@0
+#  inputs:
+#    versionSpec: 3.7
+
+#- task: CmdLine@2
+#  inputs:
+#    script: |
+#      pip --version
+#      pip install conan
+#      conan --version
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
