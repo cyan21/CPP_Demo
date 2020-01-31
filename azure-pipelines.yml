@@ -9,23 +9,23 @@ trigger:
 pool:
   vmImage: 'ubuntu-16.04'
 
-container: ubuntu:16.04
+container: conanio/gcc8
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: conan --version 
+  displayName: 'Conan version'
 
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: 3.7
+#- task: UsePythonVersion@0
+#  inputs:
+#    versionSpec: 3.7
 
-- task: Bash@3
-  inputs:
-    script: |
-      pip --version
-      pip install conan
-      conan --version
-      
+#- task: CmdLine@2
+#  inputs:
+#    script: |
+#      pip --version
+#      pip install conan
+#      conan --version
+
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
