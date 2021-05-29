@@ -5,12 +5,20 @@ class LivingConan(ConanFile):
     name = "living"
 #    version = "0.1"
     license = "Apache-2.0"
+    author = "cyan21 <yann.chaysinh@gmail.com>"
     url = "https://github.com/cyan21/CPP_Demo.git"
     description = "living package"
+    topics = ("demo", "yann")
     settings = "os", "compiler", "build_type", "arch"
+    options = {"shared": [True, False], "fPIC": [True, False]}
+    default_options = {"shared": False, "fPIC": True}
     generators = "cmake"
     requires = "greeting/0.1@yann/test"
 
+    def config_options(self):
+        if self.settings.os == "Windows":
+            del self.options.fPIC
+            
     def source(self):
         self.run("git clone https://github.com/cyan21/CPP_Demo.git")
         self.run("cd CPP_Demo/Living && git checkout conan")
