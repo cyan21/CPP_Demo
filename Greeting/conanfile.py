@@ -5,12 +5,18 @@ class GreetingConan(ConanFile):
     name = "greeting"
 #    version = "0.1"
     license = "Apache-2.0"
+    author = "cyan21 <yann.chaysinh@gmail.com>"
     url = "https://github.com/cyan21/CPP_Demo.git"
-    description = "greeting package"
+    description = "Demo purpose
+    topics = ("demo", "yann")
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
-    default_options = "shared=False"
+    options = {"shared": [True, False], "fPIC": [True, False]}
+    default_options = {"shared": False, "fPIC": True}
     generators = "cmake"
+
+    def config_options(self):
+        if self.settings.os == "Windows":
+            del self.options.fPIC
 
     def source(self):
         self.run("git clone https://github.com/cyan21/CPP_Demo.git")
@@ -28,8 +34,6 @@ class GreetingConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-	# source folder not mandatory if CMake file is on the root
-        # cmake.configure()
         cmake.configure(source_folder=self.source_folder + "/CPP_Demo/Greeting/")
         cmake.build()
 
