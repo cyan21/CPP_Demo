@@ -3,11 +3,11 @@ from conans import ConanFile, CMake, tools
 
 class GreetingConan(ConanFile):
     name = "greeting"
-#    version = "0.1"
+    # version = "0.1"
     license = "Apache-2.0"
     author = "cyan21 <yann.chaysinh@gmail.com>"
     url = "https://github.com/cyan21/CPP_Demo.git"
-    description = "Demo purpose
+    description = "Demo purpose"
     topics = ("demo", "yann")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
